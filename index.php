@@ -21,6 +21,9 @@ if ( ! function_exists( 'ndh_deregister_heartbeat_script' ) ) {
         if ( wp_script_is( 'wp-auth-check', 'registered' ) ) {
             wp_deregister_script( 'wp-auth-check' );
         }
+        if ( wp_script_is( 'autosave', 'registered' ) ) {
+            wp_deregister_script( 'autosave' );
+        }
     }
 }
 add_action( 'admin_init', 'ndh_deregister_heartbeat_script', 9999 );
